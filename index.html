@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Homepage</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <style>
+	body {margin-top: 60px;}
+    </style>
+
+    <script type="text/javascript">
+    tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+    tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+    function GetClock(){
+    d = new Date();
+    nday   = d.getDay();
+    nmonth = d.getMonth();
+    ndate  = d.getDate();
+    nyear = d.getYear();
+    nhour  = d.getHours();
+    nmin   = d.getMinutes();
+    nsec   = d.getSeconds();
+
+    if(nyear<1000) nyear=nyear+1900;
+
+         if(nhour ==  0) {ap = " AM";nhour = 12;} 
+    else if(nhour <= 11) {ap = " AM";} 
+    else if(nhour == 12) {ap = " PM";} 
+    else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+
+    if(nmin <= 9) {nmin = "0" +nmin;}
+    if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+    document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+    setTimeout("GetClock()", 1000);
+    }
+    window.onload=GetClock;
+    </script>
+  
+
+
+  </head>
+
+  <body>
+
+     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">HomePage</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="Dropbox.lnk">Dropbox</a></li>
+                <li><a href="http://drdeeps.squidfamily.net/">Personal Site</a></li>
+                <li><a href="http://pomf.se/">Pomf.se</a></li>
+                <li><a href="to_do_List.html">To-Do List</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container -->
+        </nav>
+        <br>
+        <div class="container">
+          <center>
+      <div id="main">
+      <form method=POST accept-charset="UTF-8" action='https://us2.startpage.com/do/search'id=searchsys name="searchsys" onsubmit="javascript:document.searchsys.query.value=document.searchsys.keyword.value;">
+      <input type=hidden name=query >
+      <input id='search' type=text class="width_update_class" name=keyword autofocus placeholder="Search...">
+      <input value=sb type=hidden name=frm>
+      <input value=process_search type=hidden name=cmd>
+      <input value=english type=hidden name=language>
+      </form>
+      </div>
+      <br>
+      <div id="clockbox"></div>
+      </center>
+          
+          </div>
+
+
+          </form></center> 
+          <center><h1>Forums</h1>
+               <hr noshade size=8 width="25%"> 
+          <a href="https://facepunch.com/fp_read.php">Read Threads on FP</a><br>
+          <a href="http://www.giveupalready.com/">GUA</a><br>
+          <a href="https://www.teksyndicate.com">Tek Syndicate</a><br>
+          <a href="https://www.4chan.org/">4chan</a><br>
+          <a href="http://www.reddit.com/">Reddit</a><br>
+
+          <h1>Media</h1>
+          <hr noshade size=8 width="25%"> 
+          <a href="https://www.thepiratebay.se/">TPB</a><br>
+          <a href="https://www.youtube.com/">JewTube</a><br>
+          <a href="https://www.pandora.com/">Pandora's Box</a><br>
+          <a href="https://www.duckduckgo.com/">DDG</a><br>
+          <a href="https://www.google.com/">Google</a><br>
+          <a href="http://www.wallbase.cc">Wallbase</a><br>
+        
+
+          <h1>Social Media</h1>
+          <hr noshade size=8 width="25%"> 
+          <a href="https://www.facebook.com/">Facebook</a><br>
+          <a href="https://www.twitter.com">Twatter</a><br></center>
+          </div>
+      </div>
+
+    </div><!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>

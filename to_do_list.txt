@@ -1,0 +1,4 @@
+-Perfect this site, include fancier bits. (i.e. make each section a drop down menu)
+-Add more links
+-Go opensource and place on Github
+-Make a web accessible version via http://drdeeps.squidfamily.net/start
